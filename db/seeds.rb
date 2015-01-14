@@ -5,3 +5,28 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+User.create!(email: "engrohitjain5@gmail.com",
+             password:              "rohitrohit",
+             password_confirmation: "rohitrohit",
+             roles: true,
+             admin: true)
+99.times do |n|
+  
+  email = "example-#{n+1}@railstutorial.org"
+  password = "password"
+  User.create!(email: email,
+              password:              password,
+              password_confirmation: password,
+              roles: false,
+              admin: false,
+              confirmed_at: Time.zone.now)
+end
+
+Post.create!(title: "Ruby On Rails",
+	experience: 8,
+	salary: 21352,
+	post: "developer",
+	user_id: 1)
+

@@ -6,7 +6,7 @@ gem 'pg', '~> 0.18.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'devise'
 
-
+gem 'bootstrap-sass'
 gem 'rails', '4.2.0.rc3'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'

@@ -2,11 +2,13 @@ development:
   host: localhost
   adapter: postgresql
   encoding: unicode
-  database: 	
+  database: 
   pool: 5
   username: postgres
   password: postgres
   timeout: 5000
+
+
 production:
   host: firstass
   adapter: postgresql

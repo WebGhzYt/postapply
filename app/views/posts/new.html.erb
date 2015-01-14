@@ -1,0 +1,26 @@
+<h1>new post/Job for user</h1>
+
+
+
+<div class="row">
+ 
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_for(@post) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+	  <%= f.label :experience %>
+      <%= f.text_field :experience %>
+  	  <%= f.label :salary %>
+      <%= f.text_field :salary %>
+      <%= f.label :post %>
+      <%= f.text_field :post %>
+      <%= f.label :note %>
+      <%= f.text_area :note %>
+
+
+
+      <%= f.submit "Create new post", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

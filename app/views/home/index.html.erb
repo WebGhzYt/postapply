@@ -1,0 +1,11 @@
+
+ <% if !(signed_in?) %>
+
+<div>
+
+    <center><%= link_to "Registraion", new_user_registration_path , class: "btn-group-lg btn btn-lg btn-primary" %></center>
+</div>
+<% else %>
+	Hello, <%= @current_user.email %>
+<% end %>
+<h1>Welcome to job Portol</h1>
