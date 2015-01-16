@@ -5,6 +5,7 @@ class PostsController < ApplicationController
  
 		def index
 		@posts = Post.all
+    @users = User.all
 		#.paginate(page: params[:page])
 		#@current_post = current_post
 		
