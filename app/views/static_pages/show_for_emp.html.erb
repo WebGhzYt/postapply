@@ -1,4 +1,23 @@
-
+<h2>List of applyed user of this job</h2>
+<table>
+<tr>
+<% @posts.each do |post| %>
+<% temp = 1 %>
 <% if current_user != false %>
-	For Employee post complet informaiton with apply also
-  <%end %>
+
+	<% @applys.each do |apply| %>
+		<% if post.id ==  apply.post_id %>
+		<% @temp = 2 %>
+
+		<td><%= post.id %></td>
+		<td><%= post.title %></td>
+		<td><%= apply.user_id %></td>
+	<% end %>
+   		
+  	<%end %>
+  	</tr>
+  	
+  	</table>
+<% end %>
+<% end %>
+

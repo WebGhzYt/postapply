@@ -10,11 +10,15 @@ Rails.application.routes.draw do
   get 'post_home' => 'static_pages#post_home_page'
   get 'show_for_user' => 'static_pages#show_for_user'
 
-  get 'show_for_emp' => 'static_pages#show_for_emp'
+  post 'show_for_emp' => 'static_pages#show_for_emp'
   get 'post_for_user' => 'posts#show_for_user'
 
-  
-  
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :apply
 
 resources :profile
 resources :posts

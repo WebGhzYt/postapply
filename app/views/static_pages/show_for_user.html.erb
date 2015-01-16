@@ -1,4 +1,25 @@
 
+<% @posts.each do |post| %>
+
 <% if current_user != false %>
-	For User post complet informaiton with apply also
+	<% @applys.each do |apply| %>
+	<% if apply.post_id == post.id and current_user.id == apply.user_id %>
+		<% @temp = 1 %>
+	<% end %>
+   	<% if @temp == 1 && apply.post_id == post.id && current_user.id == apply.user_id %>
+   		applyed
+   		<% @temp = 2 %> <% break %>
+   	<% else %>
+   	<% @temp == 3 %>
+   	<% if @temp == 3 && apply.post_id == post.id && current_user.id == apply.user_id  %>
+   	Not applyed
+   	
+   		<% @temp = 2%>
+   		<% end %>
+   	<% break %>
+   	<% end %>
+
+   <% end %>
+
   <%end %>
+<% end %>

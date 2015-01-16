@@ -17,10 +17,16 @@ class StaticPagesController < ApplicationController
     @current_user = current_user
   end
    def show_for_user
-
+    @applys = Apply.all
+  
+    @posts = Post.all
   end
    def show_for_emp
-
+    
+    #@post = Post.find(params[:id])
+    @applys = Apply.all
+    @posts = Post.all
+    
   end
 
 end

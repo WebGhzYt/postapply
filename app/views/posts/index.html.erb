@@ -10,7 +10,9 @@
 	<td>Posted By</td>
 	<td>Status</td>
 	</tr>
+	
   <% @posts.each do |post| %>
+  <% temp = 1%>
 <tr>
      
       <td><%= link_to post.id, '#' %></td>
@@ -18,9 +20,20 @@
      
     <td> <%= link_to post.user_id, profile_path(post.user_id) %></td>
 
- <td>    <%= link_to "Apply", post_path(post.id) %></td>
-</tr>
+ <td>
+ <div>
+ 	
+  <%= link_to "Apply", apply_index_path(:post_id => post.id), :method => :post  %>
+  
+
+ </div>
+  
+  </td> 
+
   <% end %>
+  
+</tr>
+
 <% else %>
 	No any Jobs
 <% end %>
