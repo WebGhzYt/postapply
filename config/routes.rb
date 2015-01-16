@@ -8,12 +8,17 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'post_home' => 'static_pages#post_home_page'
+  get 'show_for_user' => 'static_pages#show_for_user'
+
+  get 'show_for_emp' => 'static_pages#show_for_emp'
+  get 'post_for_user' => 'posts#show_for_user'
 
   
-  get 'static_pages/news'
+  
 
 resources :profile
 resources :posts
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

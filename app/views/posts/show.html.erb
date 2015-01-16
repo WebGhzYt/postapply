@@ -1,37 +1,54 @@
-<h1>Posted By you</h1>
 
 
 <table bgcolor="yellow" align="center" width="100%">
 <ul class="users">
-<% if @posts.any? %>
-<tr>
-	<td>Post Id</td>
-	<td>Post Title</td>
-	<td>Posting Date</td>
-	<td>Laste Update</td>
+<% if (@posts.any?) %>
+			<h1>Posted By you</h1>
+				<tr>
+					<td>Post Id</td>
+					<td>Post Title</td>
+					<td>Posting Date</td>
+					<td>Last Update</td>
+					<td></td><td></td>
+				</tr>
 
-	
-</tr>
   <% @posts.each do |post| %>
   <% if @current_user.id == post.user_id %>
-			<tr>
-	     		<td><%= link_to post.id, '#' %></td>
-	     		<td><%= link_to post.title, '#' %></td>
-	     	    <td><% link_to post.created_at, '#' %></td>
-	     	    <td><% link_to post.updated_at, '#' %></td>
 
+
+			<tr>
+	     		<td><%= post.id  %></td>
+	     		<td><%= link_to post.title, show_for_emp_path(post.id) %></td>
+	     	    <td>Posted <%= time_ago_in_words(post.created_at) %> ago.</td>
+	     	    <td>Posted <%= time_ago_in_words(post.updated_at) %> ago.</td>
+	     	    <td>
+					
+      					<%= link_to "delete", post , method: :delete,
+                                       data: { confirm: "You sure?" } %>
+
+
+	     	    </td>
+	     	    <td>
+						<%= link_to "Update", edit_post_path(post.id) %>
+
+	     	    	
+	     	    </td>
+			</tr>
+			<tr>
 			</tr>
 			<% end %>
+  
   <% end %>
+
 <% else %>
 	No any Jobs
+
 <% end %>
 
 </ul>
 </table>
 
+			<td><center><%= link_to "New Job", new_post_path , class: "btn btn-lg btn-primary" %></center>
+</td>
 
 
-
-     
-     

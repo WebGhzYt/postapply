@@ -12,6 +12,18 @@ User.create!(email: "engrohitjain5@gmail.com",
              password_confirmation: "rohitrohit",
              roles: true,
              admin: true)
+
+User.create!(email: "user@user.com",
+             password:              "user@user.com",
+             password_confirmation: "user@user.com",
+             roles: false,
+             admin: false)
+User.create!(email: "emp@emp.com",
+             password:              "emp@emp.com",
+             password_confirmation: "emp@emp.com",
+             roles: true,
+             admin: false)
+
 99.times do |n|
   
   email = "example-#{n+1}@railstutorial.org"
@@ -25,8 +37,8 @@ User.create!(email: "engrohitjain5@gmail.com",
 end
 
 Post.create!(title: "Ruby On Rails",
-	experience: 8,
-	salary: 21352,
-	post: "developer",
-	user_id: 1)
+  experience: 8,
+  salary: 21352,
+  post: "developer",
+  user_id: 1)
 

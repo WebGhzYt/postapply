@@ -14,11 +14,11 @@
 <tr>
      
       <td><%= link_to post.id, '#' %></td>
-     <td><%= link_to post.title, '#' %></td>
+     <td><%= link_to post.title, show_for_user_path(post.id) %></td>
      
     <td> <% link_to post.user_id, '#' %></td>
 
- <td>    <%= link_to "Apply", '#' %></td>
+ <td>    <%= link_to "Apply", post_path(post.id) %></td>
 </tr>
   <% end %>
 <% else %>

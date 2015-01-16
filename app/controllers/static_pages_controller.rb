@@ -16,4 +16,11 @@ class StaticPagesController < ApplicationController
   def post_home_page
     @current_user = current_user
   end
+   def show_for_user
+
+  end
+   def show_for_emp
+
+  end
+
 end

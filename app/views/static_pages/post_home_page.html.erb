@@ -1,2 +1,4 @@
-<%= link_to "Jobs Posted By me ", post_path(@current_user) %>
-<br><%= link_to "new", new_post_path %>
+<div class="center jumbotron">
+<%= link_to "Jobs Posted By me ", post_path(@current_user), class: "btn btn-lg btn-primary" %>
+<%= link_to "New Job", new_post_path, class: "btn btn-lg btn-primary" %>
+</div>
