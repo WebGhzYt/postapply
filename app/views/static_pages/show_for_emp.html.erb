@@ -1,23 +1,16 @@
-<h2>List of applyed user of this job</h2>
-<table>
-<tr>
-<% @posts.each do |post| %>
-<% temp = 1 %>
-<% if current_user != false %>
 
-	<% @applys.each do |apply| %>
-		<% if post.id ==  apply.post_id %>
-		<% @temp = 2 %>
+Alredy Applied
+ 
+ <% @applys.each do |apply| %>
+ 	<% if  @post_by_title.id == apply.post_id %>
+		<%= apply.user_id %> 	
+ 	<% end %>
 
-		<td><%= post.id %></td>
-		<td><%= post.title %></td>
-		<td><%= apply.user_id %></td>
-	<% end %>
-   		
-  	<%end %>
-  	</tr>
-  	
-  	</table>
-<% end %>
-<% end %>
+ <% end %>
+
+<br><br><br><br>
+Job Infromation<br>
+Recquired Experience: - <%= @post_by_title.experience %>
+<br>Posted By: - <%= @post_by_title.user_id %>
+<br>Title Of Job: - <%= @post_by_title.id %>
 

@@ -1,25 +1,21 @@
 
-<% @posts.each do |post| %>
+ 
+ <% @applys.each do |apply| %>
+   <% if  @post_by_title.id == apply.post_id || current_user.id == apply.user_id%>
 
-<% if current_user != false %>
-	<% @applys.each do |apply| %>
-	<% if apply.post_id == post.id and current_user.id == apply.user_id %>
-		<% @temp = 1 %>
-	<% end %>
-   	<% if @temp == 1 && apply.post_id == post.id && current_user.id == apply.user_id %>
-   		applyed
-   		<% @temp = 2 %> <% break %>
-   	<% else %>
-   	<% @temp == 3 %>
-   	<% if @temp == 3 && apply.post_id == post.id && current_user.id == apply.user_id  %>
-   	Not applyed
-   	
-   		<% @temp = 2%>
-   		<% end %>
-   	<% break %>
-   	<% end %>
-
+     Post  <%= apply.post_id %>    
+     Appliyed before  <%= time_ago_in_words(apply.created_at) %>    
+     <br>
+     <% else %>
+     
    <% end %>
 
-  <%end %>
-<% end %>
+ <% end %>
+
+<br><br><br><br>
+Job Infromation<br>
+Required Experience: - <%= @post_by_title.experience %>
+<br>Posted By: - <%= @post_by_title.user_id %>
+<br>Job id: - <%= @post_by_title.id %>
+<br>Title Of Job: - <%= @post_by_title.title %>
+

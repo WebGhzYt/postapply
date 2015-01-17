@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'post_home' => 'static_pages#post_home_page'
   get 'show_for_user' => 'static_pages#show_for_user'
 
-  post 'show_for_emp' => 'static_pages#show_for_emp'
+  get 'show_for_emp' => 'static_pages#show_for_emp'
   get 'post_for_user' => 'posts#show_for_user'
 
   resources :users do

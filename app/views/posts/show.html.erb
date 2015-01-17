@@ -18,7 +18,7 @@
 
 			<tr>
 	     		<td><%= post.id  %></td>
-	     		<td><%= link_to post.title, show_for_emp_path(post.id) %></td>
+	     		<td><%= link_to post.title, show_for_emp_path(post.title) %></td>
 	     	    <td>Posted <%= time_ago_in_words(post.created_at) %> ago.</td>
 	     	    <td>Posted <%= time_ago_in_words(post.updated_at) %> ago.</td>
 	     	    <td>

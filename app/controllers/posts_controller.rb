@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 		@posts = Post.all
 		@current_user = current_user
 
+
   #@spe_post = Post.find(params[:id])		
     #@current_post = current_post
 	end

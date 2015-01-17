@@ -20,13 +20,19 @@ class StaticPagesController < ApplicationController
     @applys = Apply.all
   
     @posts = Post.all
+@post_by_title = Post.find_by_title(:title)
   end
+
    def show_for_emp
-    
-    #@post = Post.find(params[:id])
     @applys = Apply.all
+  
     @posts = Post.all
-    
+    @post_by_title = Post.find_by_title(:title)
+
+
+    #@current_user = current_user
+    #@post = Post.find(params[:id])
+
   end
 
 end

@@ -9,9 +9,10 @@ class ApplyController < ApplicationController
   def create
   	@applyed_user = Apply.find_by(user_id: current_user.id, post_id: params[:post_id])
   	if @applyed_user == nil
-	    @apply = Apply.new(:user_id => current_user.id, :post_id => params[:post_id])
+	    @apply = Apply.new(:user_id => current_user.id, :post_id => params[:post_id],:apply => true)
 	    if @apply.save
 	       flash[:success] = "Applyed successful"
+         
 	       	redirect_to posts_path
 		   else
 		   	flash[:success] = "Could Not Apply Try again"
