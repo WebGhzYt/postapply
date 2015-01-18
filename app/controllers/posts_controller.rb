@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
  
 		def index
-		@posts = Post.all
+		@posts = Post.paginate(page: params[:page], per_page: 10)
     @users = User.all
     @applys = Apply.all
 
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @users = User.all
     @applys = Apply.all
   
-		@posts = Post.all
+		@posts = Post.paginate(page: params[:page], per_page: 10)
 		@current_user = current_user
 
 

@@ -5,6 +5,7 @@ gem 'pg', '~> 0.18.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'devise'
+gem 'will_paginate', '~> 3.0.6'
 
 gem 'bootstrap-sass'
 gem 'rails', '4.2.0.rc3'

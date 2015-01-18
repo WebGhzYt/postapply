@@ -5,7 +5,7 @@ has_many :post, dependent: :destroy
 #has_many :active_applies, class_name:  "Apply",
  #                                 foreign_key: "user_id",
   #                                dependent:   :destroy
-
+#self.per_page = 10
                                   
 devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :confirmable, :validatable

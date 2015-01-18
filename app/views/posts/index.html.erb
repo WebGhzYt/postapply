@@ -3,11 +3,13 @@
 
 <table bgcolor="yellow" align="center" width="100%">
 <ul class="users">
+<center><%= will_paginate %></center>
 <% if (@posts.any?) %>
 <tr>
 	<td>Post Id</td>
 	<td>Post Title</td>
 	<td>Posted By</td>
+    <td>Posted Before</td>
 	<td>Status</td>
 	</tr>
 	
@@ -19,7 +21,7 @@
      <td><%= link_to post.title, show_for_user_path(post.title) %></td>
      
     <td> <%= link_to post.user_id, profile_path(post.user_id) %></td>
-
+  <td><%= time_ago_in_words(post.created_at) %></td>
  <td>
  <div>
  	
@@ -38,5 +40,7 @@
 <% end %>
 
 </ul>
+
 </table>
 
+<center><%= will_paginate %></center>

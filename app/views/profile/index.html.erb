@@ -1,20 +1,35 @@
 <h1>All users</h1>
 <div>UserId</div>
 
-
+<table width="100%" align="center">
+<tr>
+  <td>User Email</td>
+  <td>Crated</td>
+  <td>Last Updated</td>
+  <td></td>
+</tr>
 <ul class="users">
+<center><%= will_paginate @users%></center>
 
   <% @users.each do |user| %>
-    <li>
+    <tr>
+
+    
      <% if user.roles != true %>
-      <%= link_to user.email, profile_path(user) %>
+      <td><%= link_to user.email, profile_path(user) %></td>
+      <td><%= time_ago_in_words(user.created_at) %></td>
+      <td><%= time_ago_in_words(user.updated_at) %></td>
       <% end %>
       <% if (current_user.admin == true) && !user.admin? %>
-    | <%= link_to "delete", profile_path(user.id) , method: :delete,
+    <td> <%= link_to "delete", profile_path(user.id) , method: :delete,
                                   data: { confirm: "r you sure?" } %>
+                                  </td>
        <% end %>
   	
-    </li>
+    </tr>
   <% end %>
+</ul>
+</table>
+<center><%= will_paginate @users%></center>
 
 
