@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   get 'show_for_emp' => 'static_pages#show_for_emp'
   get 'post_for_user' => 'posts#show_for_user'
-
+  get '/apply' => "posts#apply"
+  delete '/unapply' => "posts#unapply"
+  
   resources :users do
     member do
       get :following, :followers

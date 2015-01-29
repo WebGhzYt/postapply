@@ -2,44 +2,43 @@
 
 
 <table bgcolor="yellow" align="center" width="100%">
-<ul class="users">
-<center><%= will_paginate %></center>
-<% if (@posts.any?) %>
-<tr>
-	<td>Post Id</td>
-	<td>Post Title</td>
-	<td>Posted By</td>
-    <td>Posted Before</td>
-	<td>Status</td>
-	</tr>
-	
-  <% @posts.each do |post| %>
-  <% temp = 1%>
-<tr>
-     
-      <td><%= link_to post.id, '#' %></td>
-     <td><%= link_to post.title, show_for_user_path(post.title) %></td>
-     
-    <td> <%= link_to post.user_id, profile_path(post.user_id) %></td>
-  <td><%= time_ago_in_words(post.created_at) %></td>
- <td>
- <div>
- 	
-    <%= link_to "Apply", apply_index_path(:post_id => post.id), :method => :post  %>
-   
- </div>
-  
-  </td> 
+  <ul class="users">
+    <center><%= will_paginate %></center>
+    <% if (@posts.any?) %>
+      <tr>
+      	<td>Post Id</td>
+      	<td>Post Title</td>
+      	<td>Posted By</td>
+        <td>Posted Before</td>
+      	<td>Status</td>
+      </tr>
+    	
+      <% @posts.each do |post| %>
+        <% temp = 1%>
+        <tr>
+           <td><%= link_to post.id, '#' %></td>
+           <td><%= link_to post.title, show_for_user_path(post.title) %></td>
+           <td> <%= link_to post.user_id, profile_path(post.user_id) %></td>
+           <td><%= time_ago_in_words(post.created_at) %></td>
+           <td>
+             <div id='apply_<%= post.id %>'>
+             
+                     <%= link_to "Apply", 'javascript:void(0)', :method => :post, class: "btn btn-sm btn-primary apply-btn", :id => "job_btn", 'data-id' => "#{post.id}"  %>
+                     <%#= link_to image_tag('fb_icon.png', alt: 'fb'), 'javascript:void(o)', 'data-no-turbolink'=> true, 'data-link' => profile_private_show_url(profile_id: current_user.profile.id, private_code: current_user.profile.private_code, invite: true, via: 'fb'), class: 'fb_invite_btn' %>
+                     
+             </div>
+              
+          </td> 
 
-  <% end %>
-  
-</tr>
+      <% end %>
+      
+    </tr>
 
-<% else %>
-	No any Jobs
-<% end %>
+    <% else %>
+    	No any Jobs
+    <% end %>
 
-</ul>
+  </ul>
 
 </table>
 
