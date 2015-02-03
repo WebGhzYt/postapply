@@ -5,4 +5,8 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   
   belongs_to :user
+
+has_many :active_apply, class_name: "Applies",foreign_key: "post_id",
+                                  dependent:   :destroy
+
 end

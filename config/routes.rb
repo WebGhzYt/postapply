@@ -17,10 +17,11 @@ Rails.application.routes.draw do
   
   resources :users do
     member do
-      get :following, :followers
+      get :applying
     end
   end
-  resources :apply
+
+resources :apply
 
 resources :profile
 resources :posts
