@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get :applying
     end
   end
-#delete '/jobcancel' => "apply#destroy"
+delete 'jobcancel' => "apply#destroy"
 resources :apply
 
 resources :profile

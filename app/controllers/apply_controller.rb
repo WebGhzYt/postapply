@@ -53,12 +53,12 @@ class ApplyController < ApplicationController
   end
 
   def destroy
-        Apply.find(params[:id]).destroy
+          @apply =  Apply.find_by(params[:id]).destroy
           flash[:success] = "Job Cancel"
-          redirect_to posts_path
-        
+          redirect_to posts_path           
   end
 
+  
 private
   def work
       
