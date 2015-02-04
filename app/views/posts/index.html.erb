@@ -28,16 +28,27 @@
              
              <div id="apply_form">
                 <% if current_user.applying?(post,current_user) %>
-                  <%= render partial: 'unapply', locals: {post_id: post.id} %>
+                  <%#= render partial: 'unapply', locals: {post_id: post.id} %>
+                  <%#= link_to "UnApply", edit_apply_path(post.id), :method => :delete, class: " btn-sm btn-primary", :id => "job_btn", 'data-id' => "#{post.id}"  %>
+                  <%#= link_to "Cancel", edit_apply_path(post.id) , method: :delete, class: " btn-sm btn-primary",data: {confirm: "r u shure"} %>
+                  <%= link_to 'Cancel', '#', data: { confirm: 'Are you sure?' }, class: " btn-sm btn-primary" %>
+
+
                 <% else %>
-                  <%= render partial: 'apply', locals: {post_id: post.id} %>
+                  <%#= render partial: 'apply', locals: {post_id: post.id} %>
+                      <%= link_to "Apply", apply_index_path(:post_id => post.id), :method => :post, class: " btn-sm btn-primary"  %>
+
+
+
+
                 <% end %>
              </div>
                      <%#= link_to "Apply", 'javascript:void(0)', :method => :post, class: "btn btn-sm btn-primary apply-btn", :id => "job_btn", 'data-id' => "#{post.id}"  %>
                      
              
               
-          </td> 
+          </td>
+
 
       <% end %>
       

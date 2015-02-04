@@ -1,5 +1,5 @@
-<%#= form_for(current_user.active_apply.find_by(post_id: post_id),
-             html: { method: :delete }) do |f| %>
-  <%#= f.submit "UnApply", class: "btn" %>
-<%# end %>
-<%= link_to "UnApply", 'javascript:void(0)', :method => :delete, class: " btn-sm btn-primary", :id => "job_btn", 'data-id' => "#{4}"  %>
+<%= form_for(current_user.active_apply.find_by(post_id: post_id),
+             html: { method: :delete },remote: true) do |f| %>
+  <%= f.submit "UnApply", class: "btn" %>
+<% end %>
+<%#= link_to "UnApply", 'javascript:void(0)', :method => :delete, class: " btn-sm btn-primary", :id => "job_btn", 'data-id' => "#{4}"  %>
