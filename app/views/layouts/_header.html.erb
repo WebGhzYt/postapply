@@ -9,7 +9,7 @@
 
 
       <% if user_signed_in? %>
-            <% if current_user.roles != true %>
+            <% if current_user.roles != true || current_user.admin == true %>
       
           <li><%= link_to "Users", profile_index_path %></li>
           

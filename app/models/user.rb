@@ -23,7 +23,9 @@ devise :database_authenticatable, :registerable,
 #     active_apply.find_by(post_id: post.id).destroy
 # end
 
+
   # Returns true if the current user is Applying the Post.
+  
 def applying?(post,user)
     apply = Apply.find_by_post_id_and_user_id(post.id,user.id)
     if apply.nil?
@@ -31,6 +33,7 @@ def applying?(post,user)
     else
     	true
     end
+    
 end
 
 end

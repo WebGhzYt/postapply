@@ -1,10 +1,9 @@
 <h1>All List Of Jobs</h1>
-<section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
 
-
-<table bgcolor="yellow" align="center" width="100%">
+<% @count = 0 %>
+<% @uncount = 0 %>
+<div>
+<table bgcolor="yellow" align="center" width="100%" class="TFtable" >
   <ul class="users">
     <center><%= will_paginate %></center>
     <% if (@posts.any?) %>
@@ -19,7 +18,7 @@
       <% @posts.each do |post| %>
         <% @post = post %>
         <% temp = 1%>
-        <tr>
+        <tr >
            <td><%= link_to post.id, '#' %></td>
            <td><%= link_to post.title, show_for_user_path(post.title) %></td>
            <td> <%= link_to post.user_id, profile_path(post.user_id) %></td>
@@ -30,15 +29,16 @@
                 <% if current_user.applying?(post,current_user) %>
                   <%#= render partial: 'unapply', locals: {post_id: post.id} %>
                   <%#= link_to "UnApply", edit_apply_path(post.id), :method => :delete, class: " btn-sm btn-primary", :id => "job_btn", 'data-id' => "#{post.id}"  %>
-                  <%= link_to "Cancel", jobcancel_path(post.id), method: :delete, class: " btn-sm btn-primary",data: {confirm: "r u shure"} %>
+                  <%= link_to "Cancel", jobcancel_path(post.id), method: :delete, class: " unapply-button",data: {confirm: "r u shure"} %>
+                  <% @count += 1 %>
 
                   <%#= link_to 'Cancel', '#', data: { confirm: 'Are you sure?' }, class: " btn-sm btn-primary" %>
 
 
                 <% else %>
                   <%#= render partial: 'apply', locals: {post_id: post.id} %>
-                      <%= link_to "Apply", apply_index_path(:post_id => post.id), :method => :post, class: " btn-sm btn-primary"  %>
-
+                      <%= link_to "Apply", apply_index_path(:post_id => post.id), :method => :post, class: "apply-button"  %>
+                <% @uncount += 1 %>
 
 
 
@@ -46,7 +46,6 @@
              </div>
                      <%#= link_to "Apply", 'javascript:void(0)', :method => :post, class: "btn btn-sm btn-primary apply-btn", :id => "job_btn", 'data-id' => "#{post.id}"  %>
                      
-             
               
           </td>
 
@@ -62,5 +61,9 @@
   </ul>
 
 </table>
-
+</div>
+             
 <center><%= will_paginate %></center>
+
+<center><%= link_to 'APplyed Jobs','#',class: "btn-sm btn-primary" %><%= @count %><br><br>
+<%= link_to 'UnAPplyed Jobs','#',class: "btn-sm btn-primary" %><%= @uncount %></center>

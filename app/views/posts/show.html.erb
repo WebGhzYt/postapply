@@ -1,4 +1,4 @@
-<table bgcolor="yellow" align="center" width="100%">
+<table bgcolor="yellow" align="center" width="100%" class="TFtable">
 <ul class="users">
 <% if (@posts.any?) %>
 			<h1>Posted By you</h1>
@@ -9,7 +9,7 @@
 					<td>Post Title</td>
 					<td>Posting Date</td>
 					<td>Last Update</td>
-					<td></td><td></td>
+					<td colspan="2" align="center">Admin Action</td>
 				</tr>
 
   <% @posts.each do |post| %>
@@ -48,7 +48,7 @@
 </ul>
 </table>
 
-			<td><center><%= link_to "New Job", new_post_path , class: "btn btn-lg btn-primary" %></center>
-</td>
+			<br><br><center><%= link_to "New Job", new_post_path , class: "btn btn-lg btn-primary" %></center>
+
 
 

@@ -3,7 +3,41 @@
 
 /* mixins, variables, etc. */
 
+
 $gray-medium-light: #eaeaea;
+
+
+
+  .TFtable{
+    width:100%; 
+    border-collapse:collapse; 
+  }
+  .TFtable td{ 
+    padding:7px; border:#4e95f4 1px solid;
+  }
+  /* provide some minimal visual accomodation for IE8 and below */
+  .TFtable tr{
+    background: #b8d1f3;
+  }
+  /*  Define the background color for all the ODD background rows  */
+  .TFtable tr:nth-child(odd){ 
+    background: #b8d1f3;
+  }
+  /*  Define the background color for all the EVEN background rows  */
+  .TFtable tr:nth-child(even){
+    background: #dae5f4;
+  }
+
+
+
+
+.rowtab :nth-child(odd){
+  background-color:red;
+}
+.rowtab :nth-child(even){
+  background-color:green;
+}
+
 
 .masthead img{
   width:100%;
@@ -249,6 +283,47 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+.apply-button{
+     background: transparent;
+     border: 1px solid #e8e8e8;
+     display: block;
+     float: right;
+      &:hover { 
+      background: #0089d1;
+    }
+    input[type='submit'] {
+      color: rgb(229, 246, 255) ;
+      font-weight: 400;
+      font-size: 1.4em; //font size does not change
+      display: block;
+      padding: 0px 4px 0px 4px; //modification doesn't show..
+      text-decoration: none;
+      &:hover { 
+      color: rgb(229, 246, 255);
+      }
+    }
+  }
+
+.unapply-button{
+     background: transparent;
+     border: 1px solid #e8e8e8;
+     display: block;
+     float: right;
+      &:hover { 
+      background: #8889d1;
+    }
+    input[type='submit'] {
+      color: rgb(229, 246, 255) ;
+      font-weight: 400;
+      font-size: 1.4em; //font size does not change
+      display: block;
+      padding: 0px 4px 0px 4px; //modification doesn't show..
+      text-decoration: none;
+      &:hover { 
+      color: rgb(229, 246, 255);
+      }
+    }
+  }
 
 /* microposts */
 
